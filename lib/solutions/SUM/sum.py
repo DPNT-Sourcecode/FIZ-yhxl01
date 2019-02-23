@@ -13,6 +13,3 @@ def sum(intA, intB):
     return intA + intB
 
 
-
-
-
