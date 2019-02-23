@@ -53,6 +53,3 @@ def test_fizz_buzz_deluxe():
 
 def test_other():
     assert(fizz_buzz(2), "2")
-
-
-
