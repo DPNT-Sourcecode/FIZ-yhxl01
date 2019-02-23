@@ -1,5 +1,8 @@
 # noinspection PyShadowingBuiltins,PyUnusedLocal
-def compute(x, y):
+def compute(x,y):
+    return x + y
+
+def sum(x, y):
     """Add two integers, both with value between 0-100
 
     :param intA: First integer to add
@@ -17,22 +20,23 @@ def compute(x, y):
     return intA + intB
 
 
-def test_compute_basic():
-    """Basic test of compute function
+def test_sum_basic():
+    """Basic test of sum function
     """
-    assert compute(10, 10) == 20
+    assert sum(10, 10) == 20
 
 
-def test_compute_negative():
+def test_sum_negative():
     """Test that negative input raises AssertionError
     """
     with pytest.raises(AssertionError):
-        compute(-1,1)
+        sum(-1,1)
 
 
-def test_compute_gt100():
+def test_sum_gt100():
     """Test that input over 100 raises AssertionError
     """
     with pytest.raises(AssertionError):
-        compute(101, 1)
+        sum(101, 1)
+
 
