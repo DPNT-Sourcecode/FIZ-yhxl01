@@ -16,7 +16,11 @@ def fizz_buzz(number):
         status_list.append("buzz")
 
     if number > 10 and len(set(str(number))) == 1:
-        status_list.append("deluxe")
+        if number % 2 != 0:
+            status_list.append("fake deluxe")
+        else:
+            status_list.append("deluxe")
+
 
     if len(status_list) == 0: 
         return str(number)
@@ -40,10 +44,15 @@ def test_deluxe():
     assert(fizz_buzz(222), "deluxe")
 
 
+def test_fake_deluxe():
+    assert(fizz_buzz(111), "fake deluxe")
+
+
 def test_fizz_buzz_deluxe():
     assert(fizz_buzz(555), "fizz buzz deluxe")
 
 def test_other():
     assert(fizz_buzz(2), "2")
+
 
 
