@@ -1,23 +1,31 @@
 # noinspection PyUnusedLocal
 def fizz_buzz(number):
 
-    if number % 3 == 0 and number % 5 == 0:
-        return "fizz buzz"
+    is_fizz = False
+    is_buzz = False
+
+    if number % 3 == 0 or "3" in str(number):
+        is_fizz = True
     
-    if number % 3 == 0:
+    if number % 5 == 0 or "5" in str(number):
+        is_buzz = True
+
+    if is_fizz and is_buzz:
+        return "fizz buzz"
+    elif is_fizz:
         return "fizz"
-
-    if number % 5 == 0: 
+    elif is_buzz:
         return "buzz"
+    else:
+        return str(number)
 
-    return str(number)
 
 def test_fizzbuzz():
-    assert(fizz_buzz(15), "fizz buzz")
+    assert(fizz_buzz(30), "fizz buzz")
 
 
 def test_fizz():
-    assert(fizz_buzz(6), "fizz")
+    assert(fizz_buzz(23), "fizz")
 
 
 def test_buzz():
@@ -26,5 +34,6 @@ def test_buzz():
 
 def test_other():
     assert(fizz_buzz(2), "2")
+
 
 
