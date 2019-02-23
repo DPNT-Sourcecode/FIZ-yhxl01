@@ -39,3 +39,8 @@ def test_sum_gt100():
     """
     with pytest.raises(AssertionError):
         sum(101, 1)
+
+
+if __name__ == "__main__":
+    print (str(sum(1,0)))
+
